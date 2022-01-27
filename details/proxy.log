@@ -1,0 +1,79 @@
+2022-01-27T10:16:22.885044Z	info	FLAG: --concurrency="2"
+2022-01-27T10:16:22.885067Z	info	FLAG: --domain="mobie.svc.cluster.local"
+2022-01-27T10:16:22.885072Z	info	FLAG: --help="false"
+2022-01-27T10:16:22.885075Z	info	FLAG: --log_as_json="false"
+2022-01-27T10:16:22.885077Z	info	FLAG: --log_caller=""
+2022-01-27T10:16:22.885079Z	info	FLAG: --log_output_level="default:info"
+2022-01-27T10:16:22.885082Z	info	FLAG: --log_rotate=""
+2022-01-27T10:16:22.885084Z	info	FLAG: --log_rotate_max_age="30"
+2022-01-27T10:16:22.885086Z	info	FLAG: --log_rotate_max_backups="1000"
+2022-01-27T10:16:22.885096Z	info	FLAG: --log_rotate_max_size="104857600"
+2022-01-27T10:16:22.885098Z	info	FLAG: --log_stacktrace_level="default:none"
+2022-01-27T10:16:22.885106Z	info	FLAG: --log_target="[stdout]"
+2022-01-27T10:16:22.885115Z	info	FLAG: --meshConfig="./etc/istio/config/mesh"
+2022-01-27T10:16:22.885117Z	info	FLAG: --outlierLogPath=""
+2022-01-27T10:16:22.885119Z	info	FLAG: --proxyComponentLogLevel="misc:error"
+2022-01-27T10:16:22.885122Z	info	FLAG: --proxyLogLevel="warning"
+2022-01-27T10:16:22.885124Z	info	FLAG: --serviceCluster="istio-proxy"
+2022-01-27T10:16:22.885126Z	info	FLAG: --stsPort="0"
+2022-01-27T10:16:22.885130Z	info	FLAG: --templateFile=""
+2022-01-27T10:16:22.885134Z	info	FLAG: --tokenManagerPlugin="GoogleTokenExchange"
+2022-01-27T10:16:22.885144Z	info	FLAG: --vklog="0"
+2022-01-27T10:16:22.885154Z	info	Version 1.12.1-88902a51acfb0383809608ccff169319560f768c-Clean
+2022-01-27T10:16:22.885283Z	info	Proxy role	ips=[10.0.4.222] type=sidecar id=details-v1-79f774bdb9-h7bsj.mobie domain=mobie.svc.cluster.local
+2022-01-27T10:16:22.885346Z	info	Apply proxy config from env {}
+
+2022-01-27T10:16:22.886704Z	info	Effective config: binaryPath: /usr/local/bin/envoy
+concurrency: 2
+configPath: ./etc/istio/proxy
+controlPlaneAuthPolicy: MUTUAL_TLS
+discoveryAddress: istiod.istio-system.svc:15012
+drainDuration: 45s
+parentShutdownDuration: 60s
+proxyAdminPort: 15000
+serviceCluster: istio-proxy
+statNameLength: 189
+statusPort: 15020
+terminationDrainDuration: 5s
+tracing:
+  zipkin:
+    address: zipkin.istio-system:9411
+
+2022-01-27T10:16:22.886776Z	info	JWT policy is third-party-jwt
+2022-01-27T10:16:22.889076Z	info	CA Endpoint cert-manager-istio-csr.cert-manager.svc:443, provider Citadel
+2022-01-27T10:16:22.889126Z	info	Opening status port 15020
+2022-01-27T10:16:22.889197Z	info	Using CA cert-manager-istio-csr.cert-manager.svc:443 cert with certs: var/run/secrets/istio/root-cert.pem
+2022-01-27T10:16:22.889343Z	info	citadelclient	Citadel client using custom root cert: cert-manager-istio-csr.cert-manager.svc:443
+2022-01-27T10:16:22.937113Z	info	ads	All caches have been synced up in 55.219732ms, marking server ready
+2022-01-27T10:16:22.938639Z	info	sds	SDS server for workload certificates started, listening on "etc/istio/proxy/SDS"
+2022-01-27T10:16:22.938673Z	info	xdsproxy	Initializing with upstream address "istiod.istio-system.svc:15012" and cluster "Kubernetes"
+2022-01-27T10:16:22.938748Z	info	sds	Starting SDS grpc server
+2022-01-27T10:16:22.939095Z	info	Pilot SAN: [istiod.istio-system.svc]
+2022-01-27T10:16:22.939353Z	info	starting Http service at 127.0.0.1:15004
+2022-01-27T10:16:22.940559Z	info	Pilot SAN: [istiod.istio-system.svc]
+2022-01-27T10:16:22.942198Z	info	Starting proxy agent
+2022-01-27T10:16:22.942235Z	info	Epoch 0 starting
+2022-01-27T10:16:22.942267Z	info	Envoy command: [-c etc/istio/proxy/envoy-rev0.json --restart-epoch 0 --drain-time-s 45 --drain-strategy immediate --parent-shutdown-time-s 60 --local-address-ip-version v4 --file-flush-interval-msec 1000 --disable-hot-restart --log-format %Y-%m-%dT%T.%fZ	%l	envoy %n	%v -l warning --component-log-level misc:error --concurrency 2]
+2022-01-27T10:16:23.098875Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-01-27T10:16:23.187228Z	info	ads	ADS: new connection for node:details-v1-79f774bdb9-h7bsj.mobie-1
+2022-01-27T10:16:23.197370Z	info	ads	ADS: new connection for node:details-v1-79f774bdb9-h7bsj.mobie-2
+2022-01-27T10:16:27.983908Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp 127.0.0.1:15090: connect: connection refused
+2022-01-27T10:16:42.983077Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp 127.0.0.1:15090: connect: connection refused
+2022-01-27T10:16:54.864269Z	info	cache	generated new workload certificate	latency=31.926869784s ttl=59m55.135746619s
+2022-01-27T10:16:54.864312Z	info	cache	Root cert has changed, start rotating root cert
+2022-01-27T10:16:54.864327Z	info	ads	XDS: Incremental Pushing:0 ConnectedEndpoints:2 Version:
+2022-01-27T10:16:54.864387Z	info	cache	returned workload trust anchor from cache	ttl=59m55.135615754s
+2022-01-27T10:16:54.864413Z	info	cache	returned workload trust anchor from cache	ttl=59m55.13558875s
+2022-01-27T10:16:54.864532Z	info	cache	returned workload certificate from cache	ttl=59m55.135478426s
+2022-01-27T10:16:54.864844Z	info	ads	SDS: PUSH request for node:details-v1-79f774bdb9-h7bsj.mobie resources:1 size:1.3kB resource:ROOTCA
+2022-01-27T10:16:54.864918Z	info	cache	returned workload trust anchor from cache	ttl=59m55.13508662s
+2022-01-27T10:16:54.864954Z	info	ads	SDS: PUSH for node:details-v1-79f774bdb9-h7bsj.mobie resources:1 size:1.3kB resource:ROOTCA
+2022-01-27T10:16:54.865068Z	info	ads	SDS: PUSH request for node:details-v1-79f774bdb9-h7bsj.mobie resources:1 size:5.6kB resource:default
+2022-01-27T10:16:56.991017Z	info	Readiness succeeded in 34.108075217s
+2022-01-27T10:16:56.991377Z	info	Envoy proxy is ready
+[2022-01-27T10:17:02.619Z] "- - -" 0 NR filter_chain_not_found - "-" 0 0 0 - "-" "-" "-" "-" "-" - - 10.0.4.222:9080 10.0.5.45:32994 - -
+[2022-01-27T10:17:05.590Z] "- - -" 0 NR filter_chain_not_found - "-" 0 0 0 - "-" "-" "-" "-" "-" - - 10.0.4.222:9080 10.0.5.45:33068 - -
+[2022-01-27T10:17:07.112Z] "- - -" 0 NR filter_chain_not_found - "-" 0 0 0 - "-" "-" "-" "-" "-" - - 10.0.4.222:9080 10.0.5.45:33120 - -
+[2022-01-27T10:17:19.875Z] "- - -" 0 NR filter_chain_not_found - "-" 0 0 0 - "-" "-" "-" "-" "-" - - 10.0.4.222:9080 10.0.5.45:33472 - -
+[2022-01-27T10:17:21.803Z] "- - -" 0 NR filter_chain_not_found - "-" 0 0 0 - "-" "-" "-" "-" "-" - - 10.0.4.222:9080 10.0.5.45:33524 - -
+[2022-01-27T10:17:23.591Z] "- - -" 0 NR filter_chain_not_found - "-" 0 0 0 - "-" "-" "-" "-" "-" - - 10.0.4.222:9080 10.0.5.45:33576 - -

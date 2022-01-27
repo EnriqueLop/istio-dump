@@ -1,0 +1,90 @@
+2022-01-27T10:16:22.064643Z	info	FLAG: --concurrency="2"
+2022-01-27T10:16:22.064665Z	info	FLAG: --domain="mobie.svc.cluster.local"
+2022-01-27T10:16:22.064671Z	info	FLAG: --help="false"
+2022-01-27T10:16:22.064678Z	info	FLAG: --log_as_json="false"
+2022-01-27T10:16:22.064681Z	info	FLAG: --log_caller=""
+2022-01-27T10:16:22.064685Z	info	FLAG: --log_output_level="default:info"
+2022-01-27T10:16:22.064693Z	info	FLAG: --log_rotate=""
+2022-01-27T10:16:22.064696Z	info	FLAG: --log_rotate_max_age="30"
+2022-01-27T10:16:22.064700Z	info	FLAG: --log_rotate_max_backups="1000"
+2022-01-27T10:16:22.064703Z	info	FLAG: --log_rotate_max_size="104857600"
+2022-01-27T10:16:22.064707Z	info	FLAG: --log_stacktrace_level="default:none"
+2022-01-27T10:16:22.064715Z	info	FLAG: --log_target="[stdout]"
+2022-01-27T10:16:22.064719Z	info	FLAG: --meshConfig="./etc/istio/config/mesh"
+2022-01-27T10:16:22.064723Z	info	FLAG: --outlierLogPath=""
+2022-01-27T10:16:22.064726Z	info	FLAG: --proxyComponentLogLevel="misc:error"
+2022-01-27T10:16:22.064729Z	info	FLAG: --proxyLogLevel="warning"
+2022-01-27T10:16:22.064733Z	info	FLAG: --serviceCluster="istio-proxy"
+2022-01-27T10:16:22.064736Z	info	FLAG: --stsPort="0"
+2022-01-27T10:16:22.064739Z	info	FLAG: --templateFile=""
+2022-01-27T10:16:22.064743Z	info	FLAG: --tokenManagerPlugin="GoogleTokenExchange"
+2022-01-27T10:16:22.064748Z	info	FLAG: --vklog="0"
+2022-01-27T10:16:22.064753Z	info	Version 1.12.1-88902a51acfb0383809608ccff169319560f768c-Clean
+2022-01-27T10:16:22.064870Z	info	Proxy role	ips=[10.0.5.45] type=sidecar id=productpage-v1-6b746f74dc-dtrjq.mobie domain=mobie.svc.cluster.local
+2022-01-27T10:16:22.064937Z	info	Apply proxy config from env {}
+
+2022-01-27T10:16:22.065733Z	info	Effective config: binaryPath: /usr/local/bin/envoy
+concurrency: 2
+configPath: ./etc/istio/proxy
+controlPlaneAuthPolicy: MUTUAL_TLS
+discoveryAddress: istiod.istio-system.svc:15012
+drainDuration: 45s
+parentShutdownDuration: 60s
+proxyAdminPort: 15000
+serviceCluster: istio-proxy
+statNameLength: 189
+statusPort: 15020
+terminationDrainDuration: 5s
+tracing:
+  zipkin:
+    address: zipkin.istio-system:9411
+
+2022-01-27T10:16:22.065752Z	info	JWT policy is third-party-jwt
+2022-01-27T10:16:22.071793Z	info	CA Endpoint cert-manager-istio-csr.cert-manager.svc:443, provider Citadel
+2022-01-27T10:16:22.071864Z	info	Using CA cert-manager-istio-csr.cert-manager.svc:443 cert with certs: var/run/secrets/istio/root-cert.pem
+2022-01-27T10:16:22.071956Z	info	citadelclient	Citadel client using custom root cert: cert-manager-istio-csr.cert-manager.svc:443
+2022-01-27T10:16:22.072336Z	info	Opening status port 15020
+2022-01-27T10:16:22.144363Z	info	ads	All caches have been synced up in 85.264372ms, marking server ready
+2022-01-27T10:16:22.144647Z	info	sds	SDS server for workload certificates started, listening on "etc/istio/proxy/SDS"
+2022-01-27T10:16:22.145088Z	info	sds	Starting SDS grpc server
+2022-01-27T10:16:22.145409Z	info	xdsproxy	Initializing with upstream address "istiod.istio-system.svc:15012" and cluster "Kubernetes"
+2022-01-27T10:16:22.145861Z	info	Pilot SAN: [istiod.istio-system.svc]
+2022-01-27T10:16:22.146085Z	info	starting Http service at 127.0.0.1:15004
+2022-01-27T10:16:22.147239Z	info	Pilot SAN: [istiod.istio-system.svc]
+2022-01-27T10:16:22.150335Z	info	Starting proxy agent
+2022-01-27T10:16:22.150383Z	info	Epoch 0 starting
+2022-01-27T10:16:22.150410Z	info	Envoy command: [-c etc/istio/proxy/envoy-rev0.json --restart-epoch 0 --drain-time-s 45 --drain-strategy immediate --parent-shutdown-time-s 60 --local-address-ip-version v4 --file-flush-interval-msec 1000 --disable-hot-restart --log-format %Y-%m-%dT%T.%fZ	%l	envoy %n	%v -l warning --component-log-level misc:error --concurrency 2]
+2022-01-27T10:16:22.516894Z	info	xdsproxy	connected to upstream XDS server: istiod.istio-system.svc:15012
+2022-01-27T10:16:22.629100Z	info	ads	ADS: new connection for node:productpage-v1-6b746f74dc-dtrjq.mobie-1
+2022-01-27T10:16:22.630791Z	info	ads	ADS: new connection for node:productpage-v1-6b746f74dc-dtrjq.mobie-2
+2022-01-27T10:16:24.684466Z	error	failed scraping envoy metrics: error scraping http://localhost:15090/stats/prometheus: Get "http://localhost:15090/stats/prometheus": dial tcp 127.0.0.1:15090: connect: connection refused
+2022-01-27T10:16:36.349989Z	info	cache	generated new workload certificate	latency=14.205250025s ttl=59m54.650023087s
+2022-01-27T10:16:36.350023Z	info	cache	Root cert has changed, start rotating root cert
+2022-01-27T10:16:36.350037Z	info	ads	XDS: Incremental Pushing:0 ConnectedEndpoints:2 Version:
+2022-01-27T10:16:36.350109Z	info	cache	returned workload trust anchor from cache	ttl=59m54.649893389s
+2022-01-27T10:16:36.350125Z	info	cache	returned workload trust anchor from cache	ttl=59m54.649877199s
+2022-01-27T10:16:36.350251Z	info	cache	returned workload certificate from cache	ttl=59m54.649789504s
+2022-01-27T10:16:36.350481Z	info	ads	SDS: PUSH request for node:productpage-v1-6b746f74dc-dtrjq.mobie resources:1 size:1.3kB resource:ROOTCA
+2022-01-27T10:16:36.350510Z	info	ads	SDS: PUSH request for node:productpage-v1-6b746f74dc-dtrjq.mobie resources:1 size:5.6kB resource:default
+2022-01-27T10:16:36.350600Z	info	cache	returned workload trust anchor from cache	ttl=59m54.649404282s
+2022-01-27T10:16:36.350632Z	info	ads	SDS: PUSH for node:productpage-v1-6b746f74dc-dtrjq.mobie resources:1 size:1.3kB resource:ROOTCA
+2022-01-27T10:16:38.559384Z	info	Readiness succeeded in 16.499422501s
+2022-01-27T10:16:38.559694Z	info	Envoy proxy is ready
+[2022-01-27T10:17:02.617Z] "GET /details/0 HTTP/1.1" 503 UC upstream_reset_before_response_started{connection_termination} - "-" 0 95 2 - "-" "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0" "41e726f5-2778-42a2-97c0-95cb07e15eac" "details:9080" "172.20.124.225:9080" PassthroughCluster 10.0.5.45:32994 172.20.124.225:9080 10.0.5.45:32992 - allow_any
+[2022-01-27T10:17:02.636Z] "GET /reviews/0 HTTP/1.1" 503 UC upstream_reset_before_response_started{connection_termination} - "-" 0 95 2 - "-" "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0" "caf6236c-825d-445e-9231-c27fedacc149" "reviews:9080" "172.20.154.3:9080" PassthroughCluster 10.0.5.45:50646 172.20.154.3:9080 10.0.5.45:50644 - allow_any
+[2022-01-27T10:17:02.655Z] "GET /reviews/0 HTTP/1.1" 503 UC upstream_reset_before_response_started{connection_termination} - "-" 0 95 2 - "-" "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0" "283c77e5-429a-4f37-b243-d7d32056c2cd" "reviews:9080" "172.20.154.3:9080" PassthroughCluster 10.0.5.45:50650 172.20.154.3:9080 10.0.5.45:50648 - allow_any
+[2022-01-27T10:17:05.588Z] "GET /details/0 HTTP/1.1" 503 UC upstream_reset_before_response_started{connection_termination} - "-" 0 95 2 - "-" "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0" "51ddc82f-14b7-4d3a-ab00-a2d46c6b3603" "details:9080" "172.20.124.225:9080" PassthroughCluster 10.0.5.45:33068 172.20.124.225:9080 10.0.5.45:33066 - allow_any
+[2022-01-27T10:17:05.599Z] "GET /reviews/0 HTTP/1.1" 503 UC upstream_reset_before_response_started{connection_termination} - "-" 0 95 2 - "-" "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0" "3980cb0d-d9b7-4b7f-9e1e-700cdc788d21" "reviews:9080" "172.20.154.3:9080" PassthroughCluster 10.0.5.45:50720 172.20.154.3:9080 10.0.5.45:50718 - allow_any
+[2022-01-27T10:17:05.609Z] "GET /reviews/0 HTTP/1.1" 503 UC upstream_reset_before_response_started{connection_termination} - "-" 0 95 2 - "-" "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0" "518644f5-a109-4ea4-aeeb-ea85b778f751" "reviews:9080" "172.20.154.3:9080" PassthroughCluster 10.0.5.45:50724 172.20.154.3:9080 10.0.5.45:50722 - allow_any
+[2022-01-27T10:17:07.110Z] "GET /details/0 HTTP/1.1" 503 UC upstream_reset_before_response_started{connection_termination} - "-" 0 95 2 - "-" "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0" "5db4eb75-44c7-4436-8de6-2ef02b5bbe25" "details:9080" "172.20.124.225:9080" PassthroughCluster 10.0.5.45:33120 172.20.124.225:9080 10.0.5.45:33118 - allow_any
+[2022-01-27T10:17:07.117Z] "GET /reviews/0 HTTP/1.1" 503 UC upstream_reset_before_response_started{connection_termination} - "-" 0 95 2 - "-" "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0" "6ed73cba-6ac1-4a9b-b788-d40ed3ac7a12" "reviews:9080" "172.20.154.3:9080" PassthroughCluster 10.0.5.45:50772 172.20.154.3:9080 10.0.5.45:50770 - allow_any
+[2022-01-27T10:17:07.122Z] "GET /reviews/0 HTTP/1.1" 503 UC upstream_reset_before_response_started{connection_termination} - "-" 0 95 2 - "-" "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0" "3b931fed-2091-41e1-964e-e5e9721b3da8" "reviews:9080" "172.20.154.3:9080" PassthroughCluster 10.0.5.45:50776 172.20.154.3:9080 10.0.5.45:50774 - allow_any
+[2022-01-27T10:17:19.873Z] "GET /details/0 HTTP/1.1" 503 UC upstream_reset_before_response_started{connection_termination} - "-" 0 95 2 - "-" "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0" "06be29a2-3cd6-4389-9e9b-6227b0cf4ad4" "details:9080" "172.20.124.225:9080" PassthroughCluster 10.0.5.45:33472 172.20.124.225:9080 10.0.5.45:33470 - allow_any
+[2022-01-27T10:17:19.878Z] "GET /reviews/0 HTTP/1.1" 503 UC upstream_reset_before_response_started{connection_termination} - "-" 0 95 2 - "-" "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0" "7b70e3d9-2f91-4d90-9b96-bb81641b14bb" "reviews:9080" "172.20.154.3:9080" PassthroughCluster 10.0.5.45:51124 172.20.154.3:9080 10.0.5.45:51122 - allow_any
+[2022-01-27T10:17:19.883Z] "GET /reviews/0 HTTP/1.1" 503 UC upstream_reset_before_response_started{connection_termination} - "-" 0 95 2 - "-" "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0" "89450a4a-b594-4130-a1ed-bdc51351994b" "reviews:9080" "172.20.154.3:9080" PassthroughCluster 10.0.5.45:51128 172.20.154.3:9080 10.0.5.45:51126 - allow_any
+[2022-01-27T10:17:21.801Z] "GET /details/0 HTTP/1.1" 503 UC upstream_reset_before_response_started{connection_termination} - "-" 0 95 2 - "-" "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0" "667d8843-4403-4ef4-ae3d-e0565f87890e" "details:9080" "172.20.124.225:9080" PassthroughCluster 10.0.5.45:33524 172.20.124.225:9080 10.0.5.45:33522 - allow_any
+[2022-01-27T10:17:21.806Z] "GET /reviews/0 HTTP/1.1" 503 UC upstream_reset_before_response_started{connection_termination} - "-" 0 95 2 - "-" "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0" "25d485e7-955b-44db-82a9-d6d86596e22b" "reviews:9080" "172.20.154.3:9080" PassthroughCluster 10.0.5.45:51176 172.20.154.3:9080 10.0.5.45:51174 - allow_any
+[2022-01-27T10:17:21.811Z] "GET /reviews/0 HTTP/1.1" 503 UC upstream_reset_before_response_started{connection_termination} - "-" 0 95 2 - "-" "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0" "2b300499-74dc-4397-b7e4-5827e00cefde" "reviews:9080" "172.20.154.3:9080" PassthroughCluster 10.0.5.45:51180 172.20.154.3:9080 10.0.5.45:51178 - allow_any
+[2022-01-27T10:17:23.589Z] "GET /details/0 HTTP/1.1" 503 UC upstream_reset_before_response_started{connection_termination} - "-" 0 95 2 - "-" "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0" "7647caed-617c-4a70-91a4-4e9c59bd1284" "details:9080" "172.20.124.225:9080" PassthroughCluster 10.0.5.45:33576 172.20.124.225:9080 10.0.5.45:33574 - allow_any
+[2022-01-27T10:17:23.594Z] "GET /reviews/0 HTTP/1.1" 503 UC upstream_reset_before_response_started{connection_termination} - "-" 0 95 2 - "-" "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0" "3bb82d9a-2fb5-4f52-a78d-1c050ef6133c" "reviews:9080" "172.20.154.3:9080" PassthroughCluster 10.0.5.45:51228 172.20.154.3:9080 10.0.5.45:51226 - allow_any
+[2022-01-27T10:17:23.599Z] "GET /reviews/0 HTTP/1.1" 503 UC upstream_reset_before_response_started{connection_termination} - "-" 0 95 2 - "-" "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0" "07e06ffe-80ed-4b6c-a0b2-6b4f264e5dbc" "reviews:9080" "172.20.154.3:9080" PassthroughCluster 10.0.5.45:51232 172.20.154.3:9080 10.0.5.45:51230 - allow_any
